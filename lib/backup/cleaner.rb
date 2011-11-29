@@ -19,6 +19,7 @@ module Backup
     def clean!
       Logger.message "Backup started cleaning up the temporary files."
       run("#{ utility(:rm) } -rf #{ paths.map { |path| "'#{ path }'" }.join(" ") }")
+      Logger.message "Backup cleanup finished"
     end
 
   private
